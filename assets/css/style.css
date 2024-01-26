@@ -1,0 +1,72 @@
+body {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    margin-bottom: .5em;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+}
+
+.locationListing {
+    position: relative;
+}
+
+.locationImage {
+    line-height: 0;
+    overflow: hidden;
+}
+
+.locationImage img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.1);
+}
+
+.locationTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: #5A000A66;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locationListing:hover .locationTitle {
+    opacity: 1;
+}
+
+.locationListing:hover .locationImage img {
+    filter: blur(2px);
+}
+
+@media (hover: none) {
+    .locationTitle {
+        opacity: 1;
+    }
+
+    .locationImage img {
+        filter: blur(2px);
+    }
+}
